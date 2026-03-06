@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LinkedIn Job Scraper</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: #0a66c2;
+      color: white;
+    }
+
+    h2 { font-size: 15px; margin-bottom: 6px; }
+
+    p {
+      font-size: 12px;
+      opacity: 0.85;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    button {
+      width: 100%;
+      padding: 11px;
+      background: white;
+      color: #0a66c2;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover { background: #dbeafe; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    #status {
+      margin-top: 14px;
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .success { color: #86efac; }
+    .error   { color: #fca5a5; }
+  </style>
+</head>
+<body>
+
+  <h2>💼 LinkedIn Job Scraper</h2>
+  <p>Open a LinkedIn job post, then click the button below to extract job data.</p>
+
+  <button id="scrapeBtn">📋 Extract Job Data</button>
+
+  <div id="status"></div>
+
+  <!-- ✅ Script is now in a separate file — no inline JS -->
+  <script src="popup.js"></script>
+
+</body>
+</html>
+```
+
+---
+
+### Step 3 — Reload the extension in Chrome
+
+1. Go to `chrome://extensions`
+2. Find your **LinkedIn Job Scraper**
+3. Click the **🔄 refresh/reload icon** on it
+4. Go back to the LinkedIn job post and try again
+
+---
+
+Your `extension/` folder should now have **4 files**:
+```
+extension/
+├── manifest.json
+├── content.js
+├── popup.html   ← updated (no inline script)
+└── popup.js     ← new file (all the JS lives here)
